@@ -14,8 +14,8 @@ public class Converter {
         if (reader instanceof CSVReader){
 
         }
-        System.out.println(reader.read(sourceFilePath));
-
+        if (reader instanceof ExcelReader){
+            System.out.println(reader.read(sourceFilePath));
+        }
     }
-
 }

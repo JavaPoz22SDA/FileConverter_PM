@@ -12,7 +12,7 @@ public class ReaderFactory {
             return new CSVReader();
         }
         if (filePath.endsWith("xlsx")) {
-            return new XSLXReader();
+            return new ExcelReader();
         }
         return null;
     }

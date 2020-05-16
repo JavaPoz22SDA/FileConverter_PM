@@ -9,9 +9,13 @@ public class Converter {
         Reader reader = readerFactory.produce(sourceFilePath);
         reader.read(sourceFilePath);
         if (reader instanceof JSONReader){
-            JSONReader jsonReader = new JSONReader();
-            System.out.println(jsonReader.read(sourceFilePath));
+
         }
+        if (reader instanceof CSVReader){
+
+        }
+        System.out.println(reader.read(sourceFilePath));
+
     }
 
 }

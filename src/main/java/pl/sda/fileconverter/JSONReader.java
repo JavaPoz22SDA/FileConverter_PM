@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,10 +29,11 @@ public class JSONReader implements Reader{
             JSONArray jsonArray = new JSONArray(content);
 
             for (int i=0; i<jsonArray.length(); i++){
+                Map<String, Object> map = new HashMap<>();
+
                 Object rawObject = jsonArray.get(i);
                 JSONObject record = new JSONObject(rawObject.toString());
-                System.out.println(jsonArray.get(i));
-                System.out.println(record.get());
+                result.add(record.toMap());
             }
 
 

@@ -9,7 +9,8 @@ public class Converter {
         Reader reader = readerFactory.produce(sourceFilePath);
         reader.read(sourceFilePath);
         if (reader instanceof JSONReader){
-            System.out.println("Działa, mam obiekt JSON");
+            JSONReader jsonReader = new JSONReader();
+            System.out.println(jsonReader.read(sourceFilePath));
         }
     }
 
